@@ -1,0 +1,25 @@
+public void findZeroSumInArrwithSet()
+     {
+         /*Set st = new HashSet(); */
+         Set setA = new HashSet();
+         /*String element = "element 1"; 
+         setA.add(element); 
+         System.out.println( setA.contains(element) );
+         */
+         
+         int n = 4;
+         int j=0;
+         tempArray = new int[]{10,6,12,31,-6};
+         
+         for(int i=0;i<n;i++){
+             if(setA.contains(-tempArray[i])){
+                 System.out.println("number found ="+tempArray[i]);
+                 return;
+             }else{
+                 System.out.println("add number in set ="+tempArray[i]);
+                 setA.add(tempArray[i]);
+             }
+         }
+        System.out.println("number Notfound ");
+     }
+     
