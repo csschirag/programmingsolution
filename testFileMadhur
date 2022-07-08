@@ -1,4 +1,6 @@
 testing
+@JmsListener(destination = "TestSolaceQueue")
+
 @Bean
     public SolConnectionFactory solConnectionFactory() throws Exception {
         SolConnectionFactory connectionFactory = SolJmsUtility.createConnectionFactory();
