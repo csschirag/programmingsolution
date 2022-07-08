@@ -1,1 +1,29 @@
 testing
+@Bean
+    public SolConnectionFactory solConnectionFactory() throws Exception {
+        SolConnectionFactory connectionFactory = SolJmsUtility.createConnectionFactory();
+        
+        
+		
+		//JmsConnectionFactory connectionFactory = SolJmsUtility.createConnectionFactory();
+        //JmsListenerContainerFactory obj = new JmsListenerContainerFactory();
+		/*
+		 * SimpleJmsListenerContainerFactory factory1 = new
+		 * SimpleJmsListenerContainerFactory();
+		 * factory1.setConnectionFactory(connectionFactory);
+		 * factory1.setPubSubDomain(Boolean.TRUE); JmsListenerContainerFactory obj =
+		 * factory1;
+		 */ 
+        
+        
+        connectionFactory.setHost("tcp://mr-q3v1t7qzczs.messaging.solace.cloud:55555");
+        connectionFactory.setVPN("solacemadhur");
+        connectionFactory.setUsername("solace-cloud-client");
+        connectionFactory.setPassword("5tadvvi79uusj9aq6un640765r");
+        connectionFactory.setClientID("Test");
+        connectionFactory.setDirectTransport(false);
+        
+        //DefaultMessageListenerContainer ob = new DefaultMessageListenerContainer();
+        //ob.setDestination(dynamicDestinationResolver());
+        return connectionFactory;
+    }
