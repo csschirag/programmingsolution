@@ -1,6 +1,14 @@
 testing
 @JmsListener(destination = "TestSolaceQueue")
 
+solace.jms.host=tcp://mr-q3v1t7qzczs.messaging.solace.cloud:55555
+solace.jms.msgVpn=solacemadhur
+solace.jms.clientUsername=solace-cloud-client
+solace.jms.clientPassword=5tadvvi79uusj9aq6un640765r
+
+spring.main.allow-bean-definition-overriding=true
+solace.jms.transport-properties=direct-transport
+
 @Bean
     public SolConnectionFactory solConnectionFactory() throws Exception {
         SolConnectionFactory connectionFactory = SolJmsUtility.createConnectionFactory();
